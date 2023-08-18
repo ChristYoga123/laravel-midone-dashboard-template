@@ -36,9 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN: Top Bar -->
                 @include('components.dashboard.topbar')
                 <!-- END: Top Bar -->
-                <div class="grid grid-cols-12 gap-6">
-                    @yield('content')
-                </div>
+                @yield('content')
             </div>
             <!-- END: Content -->
         </div>

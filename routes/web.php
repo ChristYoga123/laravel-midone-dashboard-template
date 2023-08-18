@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\DataTableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +34,7 @@ Route::prefix("dashboard")->name("dashboard.")->group(function () {
         Route::post("logout", [AuthController::class, "logout"])->name("logout");
         // Main Dashboard Route
         Route::get("/", [DashboardController::class, "index"])->name("index");
+        // DataTable Route
+        Route::get("datatable", [DataTableController::class, "index"])->name("datatable.index");
     });
 });
