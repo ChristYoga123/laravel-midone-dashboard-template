@@ -23,7 +23,7 @@
         </div>
         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
             <a href="{{ route("dashboard.index") }}"><button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Register</button></a>
-            <a href="{{ route("dashboard.login") }}"><button class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign in</button></a>
+            <a href="{{ route("dashboard.login.index") }}"><button class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign in</button></a>
         </div>
     </div>
 </div>

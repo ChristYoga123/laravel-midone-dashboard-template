@@ -20,10 +20,14 @@ Route::get('/', function () {
 });
 
 Route::prefix("dashboard")->name("dashboard.")->group(function () {
-    // Auth Route
-    Route::get("login", [AuthController::class, "login_index"])->name("login");
-    Route::get("register", [AuthController::class, "register_index"])->name("register");
+    Route::middleware("guest_dashboard")->group(function () {
+        // Auth Route
+        Route::get("login", [AuthController::class, "login_index"])->name("login.index");
+        Route::get("register", [AuthController::class, "register_index"])->name("register.index");
+    });
 
-    // Main Dashboard Route
-    Route::get("/", [DashboardController::class, "index"])->name("index");
+    Route::middleware("auth_dashboard")->group(function () {
+        // Main Dashboard Route
+        Route::get("/", [DashboardController::class, "index"])->name("index");
+    });
 });
