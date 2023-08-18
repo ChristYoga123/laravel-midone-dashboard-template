@@ -10,21 +10,17 @@
             Sign In
         </h2>
         <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
-        <div class="intro-x mt-8">
-            <input type="email" class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" required>
-            <input type="password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Password" required>
-        </div>
-        <div class="intro-x flex text-gray-700 text-xs sm:text-sm mt-4">
-            <div class="flex items-center mr-auto">
-                <input type="checkbox" class="input border mr-2" id="remember-me">
-                <label class="cursor-pointer select-none" for="remember-me">Remember me</label>
+        <form action="" method="post">
+            @csrf
+            <div class="intro-x mt-8">
+                <input type="email" class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" name="email" required>
+                <input type="password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Password" name="password" required>
             </div>
-            <a href="">Forgot Password?</a> 
-        </div>
-        <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-            <a href="{{ route("dashboard.index") }}"><button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Login</button></a>
-            <a href="{{ route("dashboard.register.index") }}"><button class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign up</button></a>
-        </div>
+            <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                <button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Login</button>
+                <a href="{{ route("dashboard.register.index") }}"><button type="button" class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign up</button></a>
+            </div>
+        </form>
         <div class="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
             By signin up, you agree to our 
             <br>

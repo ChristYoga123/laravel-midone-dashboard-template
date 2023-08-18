@@ -23,10 +23,14 @@ Route::prefix("dashboard")->name("dashboard.")->group(function () {
     Route::middleware("guest_dashboard")->group(function () {
         // Auth Route
         Route::get("login", [AuthController::class, "login_index"])->name("login.index");
+        Route::post("login", [AuthController::class, "login"])->name("login");
         Route::get("register", [AuthController::class, "register_index"])->name("register.index");
+        Route::post("register", [AuthController::class, "register"])->name("register");
     });
 
     Route::middleware("auth_dashboard")->group(function () {
+        // Auth Route
+        Route::post("logout", [AuthController::class, "logout"])->name("logout");
         // Main Dashboard Route
         Route::get("/", [DashboardController::class, "index"])->name("index");
     });
